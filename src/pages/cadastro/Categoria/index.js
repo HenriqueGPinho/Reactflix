@@ -31,7 +31,9 @@ function CadastroCategoria() {
   // ============
 
   useEffect(() => {
-    const URL = 'https://flixflix.herokuapp.com/categorias';
+    const URL = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8080/categorias'
+      : 'https://flixflix.herokuapp.com/categorias';
     fetch(URL)
       .then(async (respostaDoServer) => {
         const resposta = await respostaDoServer.json();
@@ -88,8 +90,9 @@ function CadastroCategoria() {
       </form>
 
       <ul>
-        {categorias.map((categoria) => (
-          <li key={`${categoria.nome}`}>
+        {categorias.map((categoria, indice) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <li key={`${categoria}${indice}`}>
             {categoria.titulo}
           </li>
         ))}

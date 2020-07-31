@@ -6,12 +6,14 @@ import Button from '../Button';
 
 function Menu() {
   return (
-    <nav className='Menu'>
-      <Link to='/'> {/*para o Router funcionar, substituir 'a href' por 'Link to'*/} 
-        <img className='Logo' src={Logo} alt='Flixflix logo' />
+    <nav className="Menu">
+      <Link to="/">
+        {' '}
+        {/* para o Router funcionar, substituir 'a href' por 'Link to' */}
+        <img className="Logo" src={Logo} alt="Flixflix logo" />
       </Link>
 
-      <Button as={Link} className='ButtonLink' to='/cadastro/video'>
+      <Button as={Link} className="ButtonLink" to="/cadastro/video">
         Novo Vídeo
       </Button>
     </nav>
